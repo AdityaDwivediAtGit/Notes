@@ -26,6 +26,12 @@ note : we dont have to specify type in the constructor of developer class when r
         is changed to
     class Developer:public Employee{
     Now, AskforPromotion method is accessable inside main class using object of Developer class
+8. Creating a derived class "Teacher" form base class "Employee"
+9. creating a constructor for Teacher class since default constructor is deleted in Employee class
+    Now, it can be noted that, in main,
+    when inheriting from Employee class        : Only methods inside the derived class are accessible
+    when inheriting from public Employee class : All methods inside the derived class and Base Class are accessible
+10. Created objects of Teacher and called Methods 
 */
 
 
@@ -79,6 +85,21 @@ public:
 };
 
 
+
+class Teacher:public Employee{
+public:
+    string Subject;
+    void PrepareLesson(){
+        cout<<Name<<" is preparing "<<Subject<<" Lesson."<<endl;
+    }
+    Teacher(string name, string company, int age, string subject):Employee(name, company, age){
+        Subject = subject;
+    }
+};
+
+
+
+
 // Creating a derived class for Inheritance
 // class [Derived class] : [Base class]
 class Developer:public Employee{
@@ -109,7 +130,10 @@ int main()
     d1.PrintFavProgLangMethod();
     d2.PrintFavProgLangMethod();
     d1.AskForPromotion();
+
+    Teacher t = Teacher ("Akash", "Great School", 31, "Aerodynamics");
+    t.PrepareLesson();
+    t. AskForPromotion();
 }
 
-
-// Completed till 1:09:20
+// Finished Inheritance (1:15:43)
