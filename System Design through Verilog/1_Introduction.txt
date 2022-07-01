@@ -1,1 +1,89 @@
+Course Link: https://onlinecourses.nptel.ac.in/noc21_ee97/preview
+Instructor: Prof. Shaik Rafi Ahamed (IIT Guwahati)
+
+Working tools can be synthesized using HDL.
+Two main synthesis tools:
+    1. FPGA (Field Programmable Gate Array)
+    2. ASIC (Application Specific Integrated Circuits)
+
+System Modelling Types:
+    1. Behavioural Modelling (Deals with the architecture of the system)
+    2. DataFlow Modelling (System is described in terms of RTL)
+    3. Structured Modelling 
+        1. Gate Level (Using Logic Gates)
+        2. Switch Level (Using Transistors)
+    
+
+
+****Lecture: 1 Verilog Operators and Modules****
+
+(3:50)
+Synthesis: getting netlist, which will give the electrical connection between different components
+"Synopsis" is a famous synthesis tool.
+
+HDL tools:
+    1. Design Entry
+    2. Design Verification
+    3. Test Generation
+    4. Synthesis
+    5. Timing and Fault Analysis, etc...
+
+Famous HDLs
+    1. Verilog             <----- We will study this
+    2. VHDL (Very High Speed Integrated Circuit HDL)
+
+Basic VLSI Design Flow:
+    Stage 1: Behavioural (Simulate and Verify)
+    Stage 2: RTL (Simulate and Verify)
+    Stage 3: Synthesis (Simulate and Verify) = produces netlist (description of connections) (Tools used: FPGA or ASIC)
+    Stage 4: Logic Design (Simulate and Verify)     HDL     Gate Level
+    Stage 5: Circuit Design (Simulate and Verify)   HDL     Transistor Level
+    Stage 6: Physical Design (Final Check)
+    Stage 7: Tape Out
+
+Optimise for:
+    1. High-Speed                   Time
+    2. Low Power Consumption        Energy
+    3. Low Area                     Space
+
+FPGA: (For fewer systems)
+    1. Cost-effective
+    2. Simple Design Flow
+ASIC: (For mass production)
+    1. Energy Efficient
+    2. Designed for Specific Application that cannot be changed over time.
+
+****Verilog (starts at 15:00)****
+Logic Values:
+    0: zero, logic low, false, ground
+    1: one,  logic high,       Power
+    X: unknown, Don't care (can be 0 or 1)
+    Z: high impedaance, unconnected, tri-state
+
+Number Representation in Verilog:
+    <size>'<radix> <value>
+    eg. 4'b 1010
+    eg. 8'h ax = 1010xxxx
+    eg.12'o 3zx7 = 011zzzxxx111
+
+Logical Operators:
+    && = and
+    || = or
+    !  = not
+
+Shift Operators:
+    >> = shift right operator
+    << = shift left operator
+Conditional Expression:
+    cond_exp?True_exp:False_exp;
+
+Modules (Basic Building Block)
+    Syntax:
+        module OR_gate(y,a,b);
+            ....       ^^^^^-terminal list
+        endmodule           <----------- Note: No ; here
+
+(34:15)
+Keywords:
+    module, endmodule, input, output, inout, reg, parameter, begin, end
 
